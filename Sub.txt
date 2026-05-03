@@ -2,15 +2,10 @@ https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/subs/split
 https://raw.githubusercontent.com/Ptechgithub/Configs/main/V2ray_sub.txt
 https://raw.githubusercontent.com/barry-far/V2ray-config/main/All_Configs_base64_Sub.txt
 https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt
-# اولویت 1: کانفیگ‌های ترکیبی با پشتیبانی از تست سلامت
 https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/subs/split/merged.txt
 https://raw.githubusercontent.com/Ptechgithub/Configs/main/V2ray_sub.txt
-
-# اولویت 2: کانفیگ‌های اختصاصی ایران
 https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt
 https://raw.githubusercontent.com/arshiafarrokhi/v2ray-config/main/subscription/base64.txt
-
-# اولویت 3: پشتیبان‌های بین‌المللی
 https://raw.githubusercontent.com/barry-far/V2ray-config/main/All_Configs_base64_Sub.txt
 https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt
 https://raw.githubusercontent.com/Gozargah/Marznode/master/README.md

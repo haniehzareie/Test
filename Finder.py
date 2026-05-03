@@ -1,89 +1,34 @@
-import requests
-import base64
-import re
-
-print("🚀 اسکریپت شروع شد")
-
-def extract_all_links(text):
-    """استخراج تمام لینک‌های V2ray"""
-    patterns = {
-        'vless': r'vless://[^\s]+',
-        'vmess': r'vmess://[A-Za-z0-9+/=]+',
-        'trojan': r'trojan://[^\s]+',
-        'ss': r'ss://[^\s]+'
-    }
-    links = []
-    for protocol, pattern in patterns.items():
-        found = re.findall(pattern, text)
-        links.extend(found)
-        if found:
-            print(f"   🔍 {protocol}: {len(found)} عدد")
-    return links
-
-def test_single_url(url):
-    """تست یک لینک سابسکریپشن"""
-    print(f"\n📡 بررسی: {url}")
+def extract_all_from_sub():
     try:
-        resp = requests.get(url, timeout=20)
-        print(f"   وضعیت: {resp.status_code}")
+        # خوندن فایل Sub.txt
+        with open("Sub.txt", "r", encoding="utf-8") as f:
+            lines = f.readlines()
         
-        if resp.status_code != 200:
-            print(f"   ❌ خطا: دسترسی غیرمجاز یا لینک مرده")
-            return []
+        # گرفتن همه خطوط غیرخالی
+        all_configs = []
+        for line in lines:
+            line = line.strip()
+            if line:  # اگه خط خالی نباشه
+                all_configs.append(line)
         
-        content = resp.text
-        print(f"   طول محتوا: {len(content)} کاراکتر")
+        # نوشتن توی configonline.txt
+        with open("configonline.txt", "w", encoding="utf-8") as f:
+            f.write("# ========== ALL CONFIGS FROM Sub.txt ==========\n")
+            f.write(f"# Total: {len(all_configs)} configs\n")
+            f.write("# =============================================\n\n")
+            
+            for i, config in enumerate(all_configs, 1):
+                f.write(f"{i}. {config}\n")
         
-        # تلاش برای دیکد base64
-        try:
-            decoded = base64.b64decode(content.strip()).decode('utf-8')
-            content = decoded
-            print(f"   ✅ محتوا Base64 بود و دیکد شد")
-        except:
-            print(f"   ℹ️ محتوا Base64 نیست یا نیازی به دیکد ندارد")
+        print(f"✅ Done! {len(all_configs)} configs copied to configonline.txt")
+        return True
         
-        # استخراج لینک‌ها
-        links = extract_all_links(content)
-        print(f"   📊 مجموع کانفیگ‌های این سابسکریپشن: {len(links)}")
-        
-        # نمایش نمونه
-        if links:
-            print(f"   نمونه: {links[0][:80]}...")
-        
-        return links
-        
-    except Exception as e:
-        print(f"   ❌ خطای غیرمنتظره: {str(e)}")
-        return []
-
-def main():
-    # خواندن Sub.txt
-    try:
-        with open("Sub.txt", 'r') as f:
-            urls = [line.strip() for line in f if line.strip() and not line.startswith('#')]
-        print(f"📋 تعداد سابسکریپشن‌های بارگذاری شده: {len(urls)}")
     except FileNotFoundError:
-        print("❌ فایل Sub.txt پیدا نشد!")
-        return
-    
-    all_configs = []
-    
-    for url in urls:
-        configs = test_single_url(url)
-        all_configs.extend(configs)
-    
-    # حذف تکراری‌ها
-    unique_configs = list(dict.fromkeys(all_configs))
-    
-    # ذخیره نتایج
-    output_file = "Germany_vless.txt"
-    with open(output_file, 'w') as f:
-        for config in unique_configs:
-            f.write(config + '\n')
-    
-    print(f"\n✅ کار تمام شد!")
-    print(f"📊 مجموع کانفیگ‌های منحصربفرد: {len(unique_configs)}")
-    print(f"💾 ذخیره شده در: {output_file}")
+        print("❌ ERROR: Sub.txt not found!")
+        return False
+    except Exception as e:
+        print(f"❌ ERROR: {e}")
+        return False
 
 if __name__ == "__main__":
-    main()
+    extract_all_from_sub()

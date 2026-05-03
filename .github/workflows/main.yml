@@ -1,26 +1,39 @@
-name: Extract Configs
+name: Update V2Ray Configs
 
 on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+  schedule:
+    # هر ۱۵ دقیقه یکبار اجرا بشه
+    - cron: '*/15 * * * *'
+  workflow_dispatch:  # برای اجرای دستی از دکمه
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+permissions:
+  contents: write
 
 jobs:
-  extract:
+  extract-and-update:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       
-      - name: Run extraction
-        run: python Finder.py
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
       
-      - name: Commit results
+      - name: Install dependencies
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add configonline.txt
-          git commit -m "Extracted configs from Sub.txt" || echo "no changes"
+          pip install requests
+      
+      - name: Run extractor script
+        run: |
+          python v2ray_extractor.py
+      
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add v2ray_configs.txt
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update v2ray configs $(date '+%Y-%m-%d %H:%M:%S')"
           git push

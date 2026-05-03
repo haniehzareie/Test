@@ -1,4 +1,4 @@
-name: V2ray Config Finder
+name: V2ray Configs Finder
 
 on:
   workflow_dispatch:

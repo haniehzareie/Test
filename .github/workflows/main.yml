@@ -1,4 +1,4 @@
-name: Refresh V2Ray Configs
+name: Update V2Ray Configs
 
 on:
   schedule:
@@ -6,36 +6,29 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-configs:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests
+      - name: Install requests
+        run: pip install requests
 
-      - name: Run config collector
-        run: python "Finder.py"
+      - name: Run Finder.py
+        run: python Finder.py
 
       - name: Commit changes
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'github-actions'
+          git config --global user.email 'actions@github.com'
           git add Confingonline.txt
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "🔄 Update configs - $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
-          fi
+          git diff --staged --quiet || (git commit -m "Update configs" && git push)

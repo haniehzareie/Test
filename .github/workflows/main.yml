@@ -1,0 +1,38 @@
+name: V2ray Config Finder
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      
+      - name: Install requests
+        run: pip install requests
+      
+      - name: Run Finder script
+        run: python Finder.py
+      
+      - name: Upload result as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Germany-Vless-Configs
+          path: Germany_vless.txt
+      
+      - name: Display output (for log)
+        run: |
+          if [ -f Germany_vless.txt ]; then
+            echo "✅ فایل ساخته شد! تعداد خطوط: $(wc -l < Germany_vless.txt)"
+          else
+            echo "❌ فایل ساخته نشد!"
+          fi

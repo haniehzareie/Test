@@ -2,13 +2,13 @@
 # Total: 10 configs
 # =============================================
 
-1. https://raw.githubusercontent.com/Farid-Karimi/Config-Collector/main/mixed_iran.txt
-2. https://raw.githubusercontent.com/miladtahanian/Config-Collector/main/mixed_iran.txt
-3. https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub1.txt
-4. https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub2.txt
-5. https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt
-6. https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt
-7. https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/trojan.txt
-8. https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt
-9. https://raw.githubusercontent.com/yitong2333/proxy-minging/main/v2ray.txt
-10. https://raw.githubusercontent.com/FLAT447/v2ray-lists/raw/refs/heads/main/githubmirror/1.txt
+1. https://raw.githubusercontent.com/SoliSpirit/v2ray-configs/main/All_Configs.txt
+2. https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Sub1.txt
+3. https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Sub2.txt
+4. https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs.txt
+5. https://raw.githubusercontent.com/victorgeel/keybot/main/subscription/working_keys.txt
+6. https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt
+7. https://raw.githubusercontent.com/SoroushImanian/BlackKnight/main/subscription/normal/MIX
+8. https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/subscription/mix_base64
+9. https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt
+10. https://static.v2rayshare.net/2026/05/20260503.txt

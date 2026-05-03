@@ -1,15 +1,14 @@
 # ========== ALL CONFIGS FROM Sub.txt ==========
-# Total: 11 configs
+# Total: 10 configs
 # =============================================
 
-1. https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/subs/split/merged.txt
-2. https://raw.githubusercontent.com/Ptechgithub/Configs/main/V2ray_sub.txt
-3. https://raw.githubusercontent.com/barry-far/V2ray-config/main/All_Configs_base64_Sub.txt
-4. https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt
-5. https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/subs/split/merged.txt
-6. https://raw.githubusercontent.com/Ptechgithub/Configs/main/V2ray_sub.txt
-7. https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt
-8. https://raw.githubusercontent.com/arshiafarrokhi/v2ray-config/main/subscription/base64.txt
-9. https://raw.githubusercontent.com/barry-far/V2ray-config/main/All_Configs_base64_Sub.txt
-10. https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt
-11. https://raw.githubusercontent.com/Gozargah/Marznode/master/README.md
+1. https://raw.githubusercontent.com/Farid-Karimi/Config-Collector/main/mixed_iran.txt
+2. https://raw.githubusercontent.com/miladtahanian/Config-Collector/main/mixed_iran.txt
+3. https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub1.txt
+4. https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub2.txt
+5. https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt
+6. https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt
+7. https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/trojan.txt
+8. https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt
+9. https://raw.githubusercontent.com/yitong2333/proxy-minging/main/v2ray.txt
+10. https://raw.githubusercontent.com/FLAT447/v2ray-lists/raw/refs/heads/main/githubmirror/1.txt
